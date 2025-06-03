@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --color-principal: #0055ff;
+  --color-secundario: #2c5097;
+  --color-terciario: #ffffff;
+  --color-cuaternario: #000000;
+  --color-quintario: #ff9e02;
+  --titulares: 50px;
+  --subtitulares: 30px;
+  --texto: 20px;
+  --texto-pequeño: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  z-index: 10;
+}
+
+/*Barra de navegacion*/
+nav {
+  background-color: var(--color-principal);
+  color: white;
+  font-size: 25px;
+  display: flex;
+  /*Eje principal, solo se puede usar si el elemento es flex*/
+  justify-content: space-between;
+  /*Eje secundario, solo se puede usar si el elemento es flex*/
+  align-items: center;
+  /*height: 300px;*/
+  /*Distancia entre el borde de la caja y su contenido*/
+  /*
+  padding: 20px; 20 px en todas las direcciones
+  padding: 20px 0; 20 arriba y abajo, 0 derecha e izquierda
+  padding: 20px 0 20px 0; 20 arriba, 0 derecha, 20 abajo, 0 izquierda
+  */
+  padding: 20px;
+  /*Radio de los bordes, se lee arriba izquierda, arriba derecha
+  abajo izquierda, abajo derecha*/
+}
+
+/*
+  nav div selecciona todos los divs dentro de nav
+  nav > div selecciona solo los divs hijos directos de nav
+*/
+nav div {
+  display: flex;
+  /*Espaciado entre los elementos de la fila o columna*/
+  gap: 20px;
+}
+/*
+  Las pseudoclases manejan el estado de un elemento
+  :hover se activa cuando el mouse pasa por encima del elemento
+  :active se activa cuando el elemento es presionado
+  :focus se activa cuando el elemento es seleccionado
+  :visited se activa cuando el elemento es visitado
+  :link se activa cuando el elemento es un link
+  :first-child se activa cuando el elemento es el primer hijo de su padre
+  :last-child se activa cuando el elemento es el último hijo de su padre
+*/
+nav div a:visited,
+nav div a:link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enlace:hover {
+  color: black;
+}
+
+/*
+#inicio:hover, #introduccion:hover {
+  color: rgb(0, 0, 0)
+}
+*/
+
+/*
+  nav div a {
+    margin: 0 20px;
+  }
+*/
+
+/*MAIN*/
+main {
+  background-color: black;
+  background-image: linear-gradient(to right, #2c5097, var(--color-principal));
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+/*
+  GRID
+  Grid es un tipo de Display que permite manejar
+  un sistema de filas y columnas
+*/
+
+header {
+  height: 80vh;
+  min-height: 80vh;
+  background-size: cover;
+  /*opacity: 0.1;*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 25px;
+  /*grid-template-rows: 200px;*/
+  /*eje principal*/
+  justify-items: center;
+  /*eje secundario*/
+  align-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+/*
+  Los pseudoelementos permiten seleccionar partes de un elemento
+  ::before se activa antes de que el elemento sea renderizado
+  ::after se activa después de que el elemento sea renderizado
+  ::first-letter se activa en la primera letra del elemento
+  ::first-line se activa en la primera línea del elemento
+  ::selection se activa cuando el elemento es seleccionado
+  ::placeholder se activa cuando el elemento es un placeholder
+  ::marker se activa en el marcador de una lista
+*/
+
+/*
+  Position es una propiedad que permite manejar la posición de un elemento
+  static: posición normal
+  relative: posición relativa al elemento padre (Puedes moverlo)
+  absolute: posición absoluta al elemento padre (Puedes moverlo)
+  fixed: posición fija al viewport (pantalla) (Se queja fijo en la pantalla)
+  sticky: posición fija al scroll (Tiene su espacio en el html, pero se queda fijo al hacer scroll)
+*/
+
+header::before {
+  background-image: url("https://img.freepik.com/fotos-premium/color-abstracto-papel-plantillas_980736-10657.jpg");
+  background-size: cover;
+  background-position: center;
+  content: "";
+  position: absolute;
+  z-index: 5;
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  border: 5px solid white;
+  box-shadow: 10px 5px 12px 5px rgba(0, 0, 0, 1);
+}
+
+header > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+header > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+h1 {
+  font-size: 50px;
+  color: rgb(255, 158, 2);
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+}
+
+h2 {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+}
+
+.info {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  font-weight: 300;
+}
+
+button {
+  background-color: rgb(255, 158, 2);
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: rgb(255, 158, 2);
+  box-shadow: 0px 0px 10px black;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  cursor: default;
+}
+
+/*ANIMACIÓN*/
+.gradient-background {
+  background: linear-gradient(291deg, #2c5097, var(--color-principal), #ffffff);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
